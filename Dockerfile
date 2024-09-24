@@ -1,9 +1,6 @@
-FROM maven:3.8.4-openjdk-17
+FROM sonarqube:latest
 
 WORKDIR /app
 COPY . .
 
-ENV SONAR_HOST_URL=http://10.100.102.44:9000
-ENV SONAR_LOGIN=sqp_c417afe287f78c9a192663aadf6f1b35bdcecfbb
-
-CMD ["mvn", "verify", "sonar:sonar", "-Dsonar.projectKey=java_project", "-Dsonar.projectName='java_project'", "-Dsonar.host.url=http://10.100.102.44:9000", "-Dsonar.token=${SONAR_LOGIN}", "-Dcheckstyle.skip=true"]
+CMD ["sonar-scanner", "-Dsonar.projectKey=java_project", "-Dsonar.sources=.", "-Dsonar.host.url=http://localhost:9000", "-Dsonar.token=${SONAR_LOGIN}"]
