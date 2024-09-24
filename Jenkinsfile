@@ -2,6 +2,9 @@ node {
   stage('SCM') {
     checkout scm
   }
+  stage('Check Java Version') {
+    sh 'java -version'
+  }
   stage('SonarQube Analysis') {
     def mvn = tool 'maven';
     withSonarQubeEnv() {
