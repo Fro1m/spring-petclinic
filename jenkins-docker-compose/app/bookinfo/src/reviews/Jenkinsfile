@@ -1,0 +1,45 @@
+pipeline{
+    agent any
+
+    environment {
+    IMAGE_NAME='jb_course_test_reviews_app'
+    VERSION="v${env.BUILD_NUMBER}"
+    REPO='fro1m'
+    SNYK_TOKEN='7eaf37eb-008f-4f4f-8644-b63dc1d4c2b6'
+    CREDENTIALS_ID='docker-cred'
+    }
+
+    stages {
+        stage('Build'){
+            steps {
+                script {
+                    //Build the Docker image for the build stage
+                    sh 'docker build --target builder --tag ${IMAGE_NAME}:${VERSION}-build -f welcome/app/bookinfo/src/reviews/Dockerfile .'
+                }
+            }
+
+        }
+
+        stage('Test') {
+            steps {
+                script{
+                    //Build and test the Docker image
+                    sh 'docker build --target security --build-arg SNYK_TOKEN=${SNYK_TOKEN} --tag ${IMAGE_NAME}:${VERSION}-security -f welcome/app/bookinfo/src/reviews/Dockerfile .'
+                    sh 'docker run --rm ${IMAGE_NAME}:${VERSION}-security'
+                }
+            }
+        }
+
+        stage('Push') {
+            steps{
+                script{
+                    //Push the docker image to repo
+                    docker.withRegistry('https://index.docker.io/v1/', "${CREDENTIALS_ID}") {
+                        sh 'docker build --target run --tag ${REPO}/${IMAGE_NAME}:${VERSION} -f welcome/app/bookinfo/src/reviews/Dockerfile .'
+                        sh 'docker push ${REPO}/${IMAGE_NAME}:${VERSION}'
+                    }
+                }
+            }
+        }
+    }
+}
