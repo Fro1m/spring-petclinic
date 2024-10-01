@@ -1,7 +1,9 @@
 FROM sonarqube:latest
 
 # Install dependencies for downloading sonar-scanner
-RUN apt-get update && \
+RUN apt-get clean && \
+    rm -rf /var/lib/apt/lists/* && \
+    apt-get update && \
     apt-get install -y wget unzip
 
 # Download and install Sonar Scanner CLI
