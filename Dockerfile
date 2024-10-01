@@ -20,7 +20,7 @@ ENV SONAR_SCANNER_OPTS="-Xmx512m -Djava.home=$JAVA_HOME"
 WORKDIR /app
 
 # Copy project files
-COPY sonar-project.properties /app/
+COPY sonar-project.properties .
 COPY . .
 RUN chmod -R 755 /app
 
