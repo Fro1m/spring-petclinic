@@ -30,5 +30,5 @@ CMD ["sonar-scanner", \
     "-Dsonar.projectBaseDir=/app", \
     "-Dsonar.projectKey=jb3", \
     "-Dsonar.projectName=jb3", \
-    "-Dsonar.host.url=http://host.docker.internal:9000", \
+    "-Dsonar.host.url=http://sonarqube:9000", \
     "-Dsonar.login=sqp_21c86f6b54c151b4baaa0796fcf1c1d256bfa1f0"]
