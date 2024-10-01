@@ -6,7 +6,7 @@ RUN apt-get update && \
     rm -rf /var/lib/apt/lists/*
 
 # Set up environment variables for Java 17
-ENV JAVA_HOME=/usr/lib/jvm/java-17-openjdk
+ENV JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64
 ENV SONAR_SCANNER_OPTS="-Xmx512m -Djava.home=$JAVA_HOME"
 
 # Set working directory
