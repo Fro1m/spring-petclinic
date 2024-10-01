@@ -9,7 +9,8 @@ RUN wget https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-s
     && mv sonar-scanner-4.6.2.2472-linux /opt/sonar-scanner \
     && rm sonar-scanner-cli-4.6.2.2472-linux.zip
 
-# Export the Sonar Scanner binaries to PATH
+# Export the Sonar Scanner binaries to PATH\
+ENV JAVA_HOME=/usr/lib/jvm/java-17-openjdk
 ENV PATH $PATH:/opt/sonar-scanner/bin
 
 # Set up any environment variables required for Sonar Scanner
