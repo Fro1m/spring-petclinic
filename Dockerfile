@@ -14,7 +14,7 @@ ENV JAVA_HOME=/usr/lib/jvm/java-17-openjdk
 ENV PATH $PATH:/opt/sonar-scanner/bin
 
 # Set up any environment variables required for Sonar Scanner
-ENV SONAR_SCANNER_OPTS="-Xmx512m"
+ENV SONAR_SCANNER_OPTS="-Xmx512m -Djava.home=$JAVA_HOME"
 
 WORKDIR /app
 COPY . .
