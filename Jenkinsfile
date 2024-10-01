@@ -5,6 +5,7 @@ node {
 
     stage('Build and SonarQube Analysis') {
         // Build the Docker image
+        sh 'curl http://host.docker.internal:9000'
         sh 'docker build -t my-sonar-image .'
 
         // Run the container, executing the SonarQube analysis
