@@ -19,7 +19,7 @@ WORKDIR /app
 COPY . .
 
 # Run Maven to build the project
-RUN mvn clean install
+# RUN mvn clean install
 
 # Define the default command to run the SonarQube scanner
 CMD ["mvn", "sonar:sonar", \
