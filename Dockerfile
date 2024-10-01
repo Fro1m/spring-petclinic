@@ -26,6 +26,7 @@ RUN chmod -R 755 /app
 
 # Define the default command to run the SonarQube scanner with Java 17
 CMD ["sonar-scanner", \
+    "-X", \
     "-Dsonar.projectBaseDir=/app", \
     "-Dsonar.projectKey=jb3", \
     "-Dsonar.projectName=jb3", \
