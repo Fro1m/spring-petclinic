@@ -12,11 +12,9 @@ RUN wget https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-s
 # Export the Sonar Scanner binaries to PATH
 ENV PATH $PATH:/opt/sonar-scanner/bin
 
-# Set up any environment variables required for Sonar Scanner
-ENV SONAR_SCANNER_OPTS="-Xmx512m"
-
-# Set Java Home
+# Set up environment variables for Java 17
 ENV JAVA_HOME=/usr/lib/jvm/java-17-openjdk
+ENV SONAR_SCANNER_OPTS="-Xmx512m -Djava.home=$JAVA_HOME"
 
 # Set working directory
 WORKDIR /app
@@ -24,7 +22,7 @@ WORKDIR /app
 # Copy project files
 COPY . .
 
-# Define the default command to run the SonarQube scanner
+# Define the default command to run the SonarQube scanner with Java 17
 CMD ["sonar-scanner", \
     "-Dsonar.projectKey=jb3", \
     "-Dsonar.projectName=jb3", \
