@@ -8,9 +8,9 @@ RUN apt-get update && \
 
 # Set up environment variables for Java 17
 # Update JAVA_HOME to the correct JDK path
-ENV JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64
-ENV PATH=$JAVA_HOME/bin:$PATH
-ENV SONAR_SCANNER_OPTS="-Xmx512m -Djava.home=$JAVA_HOME"
+# ENV JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64
+# ENV PATH=$JAVA_HOME/bin:$PATH
+# ENV SONAR_SCANNER_OPTS="-Xmx512m -Djava.home=$JAVA_HOME"
 
 # Set working directory
 WORKDIR /app
