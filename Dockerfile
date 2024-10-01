@@ -14,7 +14,7 @@ WORKDIR /app
 
 # Copy project files
 COPY . .
-RUN mvn clean install
+# RUN mvn clean install
 
 # Define the default command to run the SonarQube scanner with Java 17
-CMD ["mvn", "clean", "verify", "sonar:sonar", "-Dsonar.token=sqp_21c86f6b54c151b4baaa0796fcf1c1d256bfa1f0", "-Dsonar.host.url=http://host.docker.internal:9000"]
+CMD ["mvn", "verify", "sonar:sonar", "-Dsonar.token=sqp_21c86f6b54c151b4baaa0796fcf1c1d256bfa1f0", "-Dsonar.host.url=http://host.docker.internal:9000"]
