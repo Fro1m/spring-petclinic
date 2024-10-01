@@ -1,4 +1,19 @@
-FROM sonarqube:latest
+FROM openjdk:11-jre-slim
+
+# Install wget and unzip
+RUN apt-get update && apt-get install -y wget unzip
+
+# Install SonarQube Scanner
+RUN wget https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-4.6.2.2472-linux.zip \
+    && unzip sonar-scanner-cli-4.6.2.2472-linux.zip \
+    && mv sonar-scanner-4.6.2.2472-linux /opt/sonar-scanner \
+    && rm sonar-scanner-cli-4.6.2.2472-linux.zip
+
+# Export the Sonar Scanner binaries to PATH
+ENV PATH $PATH:/opt/sonar-scanner/bin
+
+# Set up any environment variables required for Sonar Scanner
+ENV SONAR_SCANNER_OPTS="-Xmx512m"
 
 WORKDIR /app
 COPY . .
