@@ -1,5 +1,10 @@
 FROM openjdk:17-jdk-slim
 
+RUN apt-get update && \
+    apt-get install -y wget unzip maven && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
+
 # Set up environment variables for Java 17
 ENV JAVA_HOME=/usr/lib/jvm/java-17-openjdk
 ENV SONAR_SCANNER_OPTS="-Xmx512m -Djava.home=$JAVA_HOME"
