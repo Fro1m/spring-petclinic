@@ -20,10 +20,13 @@ ENV SONAR_SCANNER_OPTS="-Xmx512m -Djava.home=$JAVA_HOME"
 WORKDIR /app
 
 # Copy project files
+COPY sonar-project.properties /app/
 COPY . .
+RUN chmod -R 755 /app
 
 # Define the default command to run the SonarQube scanner with Java 17
 CMD ["sonar-scanner", \
+    "-Dsonar.projectBaseDir=/app", \
     "-Dsonar.projectKey=jb3", \
     "-Dsonar.projectName=jb3", \
     "-Dsonar.host.url=http://host.docker.internal:9000", \
