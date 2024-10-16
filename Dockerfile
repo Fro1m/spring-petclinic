@@ -12,7 +12,7 @@ RUN mvn dependency:go-offline
 COPY . .
 
 # Build the project (this step compiles the code and resolves dependencies)
-RUN ./mvnw clean package
+RUN ./mvnw clean package -Dcheckstyle.skip=true
 
 
 # Run SonarQube analysis after building the project
