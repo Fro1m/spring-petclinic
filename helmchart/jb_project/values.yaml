@@ -1,0 +1,8 @@
+image:
+  imageAndTag: fro1m/jb_course_task:latest
+  label: jb_final_project
+
+service:
+  type: LoadBalancer
+  port: '80'
+  targetPort: '8080'
