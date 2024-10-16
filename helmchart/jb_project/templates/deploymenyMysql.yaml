@@ -19,13 +19,13 @@ spec:
         ports:
         - containerPort: 3306
         env:
-        - name: ENV_VAR_1
+        - name: MYSQL_ROOT_PASSWORD
           value: {{ .Values.mysql.envVar1 }}  
-        - name: ENV_VAR_2
-          value: {{ .Values.mysql.envVar2 }}
-        - name: ENV_VAR_3
+        - name: MYSQL_ALLOW_EMPTY_PASSWORD
+          value: {{ .Values.mysql.envVar2 | quote }}
+        - name: MYSQL_USER
           value: {{ .Values.mysql.envVar3 }}
-        - name: ENV_VAR_4
+        - name: MYSQL_PASSWORD
           value: {{ .Values.mysql.envVar4 }}
-        - name: ENV_VAR_5
+        - name: MYSQL_DATABASE
           value: {{ .Values.mysql.envVar5 }}
