@@ -1,25 +1,23 @@
-Sep 20, 2024 1:52:55 PM hudson.remoting.Launcher$CuiListener status
+Oct 15, 2024 12:38:33 PM hudson.remoting.Launcher$CuiListener status
 INFO: Locating server among [http://jenkins:8080/]
-Sep 20, 2024 1:52:55 PM org.jenkinsci.remoting.engine.JnlpAgentEndpointResolver resolve
+Oct 15, 2024 12:38:33 PM org.jenkinsci.remoting.engine.JnlpAgentEndpointResolver resolve
 INFO: Remoting server accepts the following protocols: [JNLP4-connect, Ping]
-Sep 20, 2024 1:52:55 PM hudson.remoting.Launcher$CuiListener status
+Oct 15, 2024 12:38:33 PM hudson.remoting.Launcher$CuiListener status
 INFO: Agent discovery successful
   Agent address: jenkins
   Agent port:    50000
-  Identity:      eb:26:c1:d8:97:04:4b:2a:21:4f:86:47:32:97:38:7b
-Sep 20, 2024 1:52:55 PM hudson.remoting.Launcher$CuiListener status
+  Identity:      6f:10:f8:eb:b3:fe:ea:77:24:77:68:d9:59:17:e2:86
+Oct 15, 2024 12:38:33 PM hudson.remoting.Launcher$CuiListener status
 INFO: Handshaking
-Sep 20, 2024 1:52:55 PM hudson.remoting.Launcher$CuiListener status
+Oct 15, 2024 12:38:33 PM hudson.remoting.Launcher$CuiListener status
 INFO: Connecting to jenkins:50000
-Sep 20, 2024 1:52:55 PM hudson.remoting.Launcher$CuiListener status
+Oct 15, 2024 12:38:33 PM hudson.remoting.Launcher$CuiListener status
 INFO: Server reports protocol JNLP4-connect-proxy not supported, skipping
-Sep 20, 2024 1:52:55 PM hudson.remoting.Launcher$CuiListener status
+Oct 15, 2024 12:38:33 PM hudson.remoting.Launcher$CuiListener status
 INFO: Trying protocol: JNLP4-connect
-Sep 20, 2024 1:52:55 PM org.jenkinsci.remoting.protocol.impl.BIONetworkLayer$Reader run
+Oct 15, 2024 12:38:33 PM org.jenkinsci.remoting.protocol.impl.BIONetworkLayer$Reader run
 INFO: Waiting for ProtocolStack to start.
-Sep 20, 2024 1:52:56 PM hudson.remoting.Launcher$CuiListener status
-INFO: Remote identity confirmed: eb:26:c1:d8:97:04:4b:2a:21:4f:86:47:32:97:38:7b
-Sep 20, 2024 1:52:56 PM hudson.remoting.Launcher$CuiListener status
+Oct 15, 2024 12:38:33 PM hudson.remoting.Launcher$CuiListener status
+INFO: Remote identity confirmed: 6f:10:f8:eb:b3:fe:ea:77:24:77:68:d9:59:17:e2:86
+Oct 15, 2024 12:38:33 PM hudson.remoting.Launcher$CuiListener status
 INFO: Connected
-Sep 24, 2024 3:30:39 PM org.eclipse.jgit.util.FS$FileStoreAttributes getFsResolution
-WARNING: Thread[JGit-FileStoreAttributeReader-1,5,main]: got smaller file timestamp on /home/jenkins (C:\), /home/jenkins/workspace/jb_argo_project/.git/objects: 2024-09-24T15:30:39Z < 2024-09-24T15:30:39.460001Z. Aborting measurement at resolution PT0.539999S.
