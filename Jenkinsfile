@@ -12,9 +12,9 @@ node {
         withCredentials([usernamePassword(credentialsId: 'c14c8869-37cb-44c1-b14a-fba965a4ee3e', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
             sh "echo $PASSWORD | docker login -u $USERNAME --password-stdin"
         }
-        sh 'docker tag my-sonar-image jb_course_task:latest'
-        sh 'docker push jb_course_task:latest'
-        sh 'docker tag my-sonar-image jb_course_task:${buildNumber}'
-        sh 'docker push jb_course_task:${buildNumber}'
+        sh 'docker tag my-sonar-image fro1m/jb_course_task:latest'
+        sh 'docker push fro1m/jb_course_task:latest'
+        sh 'docker tag my-sonar-image fro1m/jb_course_task:${buildNumber}'
+        sh 'docker push fro1m/jb_course_task:${buildNumber}'
     }
 }
