@@ -4,6 +4,10 @@ FROM maven:sapmachine
 # Set working directory
 WORKDIR /app
 
+# Copy only the pom.xml and download dependencies (this step will be cached unless pom.xml changes)
+COPY pom.xml ./
+RUN mvn dependency:go-offline
+
 # Copy the project files to the container
 COPY . .
 
