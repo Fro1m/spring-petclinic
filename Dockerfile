@@ -1,5 +1,5 @@
 # Use Maven base image
-FROM maven:3.8.7-openjdk-17-slim
+FROM maven:sapmachine
 
 # Set working directory
 WORKDIR /app
