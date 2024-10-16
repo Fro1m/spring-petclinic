@@ -12,9 +12,9 @@ node {
             sh "echo $PASSWORD | docker login -u $USERNAME --password-stdin"
         }
         def buildNumber = env.BUILD_NUMBER
-        sh 'docker tag my-sonar-image fro1m/jb_course_task:latest'
-        sh 'docker push fro1m/jb_course_task:latest'
-        sh "docker tag my-sonar-image fro1m/jb_course_task:${buildNumber}"
-        sh "docker push fro1m/jb_course_task:${buildNumber}"
+        sh 'docker tag my-sonar-image fro1m/jb-course-task:latest'
+        sh 'docker push fro1m/jb-course-task:latest'
+        sh "docker tag my-sonar-image fro1m/jb-course-task:${buildNumber}"
+        sh "docker push fro1m/jb-course-task:${buildNumber}"
     }
 }

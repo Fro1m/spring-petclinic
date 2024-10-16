@@ -1,6 +1,6 @@
 image:
-  imageAndTag: fro1m/jb_course_task:latest
-  label: jb_final_project
+  imageAndTag: fro1m/jb-course-task:latest
+  label: jb-final-project
 
 service:
   type: LoadBalancer
