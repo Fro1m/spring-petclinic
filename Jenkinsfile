@@ -6,8 +6,9 @@ node {
     stage('Build and SonarQube Analysis') {
         // Build the Docker image
         sh 'docker build -t my-sonar-image .'
-
-        // Run the Docker container, which will automatically perform SonarQube analysis
+    }
+    stage('Run'){
+        // Run the Docker container
         sh 'docker run --rm my-sonar-image'
     }
 }
