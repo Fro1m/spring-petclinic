@@ -18,4 +18,4 @@ RUN mvn clean install -Dcheckstyle.skip=true
 RUN mvn sonar:sonar \
     -Dsonar.projectKey=java_project \
     -Dsonar.host.url=http://10.100.102.44:9000 \
-    -Dsonar.login=sqp_1ec749bfce621a5d3ef4ddd4d3a3dcf1c5b6fc4d>
+    -Dsonar.login=sqp_1ec749bfce621a5d3ef4ddd4d3a3dcf1c5b6fc4d
