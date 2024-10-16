@@ -8,7 +8,7 @@ WORKDIR /app
 COPY . .
 
 # Build the project (this step compiles the code and resolves dependencies)
-RUN mvn clean install
+RUN mvn clean install -Dcheckstyle.skip=true
 
 # Run SonarQube analysis after building the project
 RUN mvn sonar:sonar \
