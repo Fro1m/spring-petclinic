@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name:  {{ .Chart.Name }}-sql
+  namespace: default
+spec:
+  selector:
+    matchLabels:
+      app: {{ .Values.mysql.label }}
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app:  {{ .Values.mysql.label }}
+    spec:
+      containers:
+      - name:  {{ .Values.mysql.label }}
+        image:  {{ .Values.mysql.image }}
+        ports:
+        - containerPort: 3306
+        env:
+        - name: ENV_VAR_1
+          value: {{ .Values.mysql.envVar1 }}  
+        - name: ENV_VAR_2
+          value: {{ .Values.mysql.envVar2 }}
+        - name: ENV_VAR_3
+          value: {{ .Values.mysql.envVar3 }}
+        - name: ENV_VAR_4
+          value: {{ .Values.mysql.envVar4 }}
+        - name: ENV_VAR_5
+          value: {{ .Values.mysql.envVar5 }}

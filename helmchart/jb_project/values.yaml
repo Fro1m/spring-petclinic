@@ -6,3 +6,12 @@ service:
   type: LoadBalancer
   port: '80'
   targetPort: '8080'
+
+mysql:
+  image: mysql:5.7
+  label: mysql
+  envVar1: "MYSQL_ROOT_PASSWORD="
+  envVar2: "MYSQL_ALLOW_EMPTY_PASSWORD=true"
+  envVar3: "MYSQL_USER=petclinic"
+  envVar4: "MYSQL_PASSWORD=petclinic"
+  envVar5: "MYSQL_DATABASE=petclinic"
